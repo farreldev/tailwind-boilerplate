@@ -1,6 +1,6 @@
 # Gulp with TailwindCSS Starter Kit
 
-Gulp with Sass and TailwindCSS Starter Kit ( Updated with [TailwindCSS v3) )- A repo which makes your development easier with predefined gulp tasks that help you to use [tailwindcss](https://github.com/tailwindcss/tailwindcss) with simple npm commands 
+Gulp with Sass and TailwindCSS Starter Kit ( Updated with TailwindCSS v3 )- A repo which makes your development easier with predefined gulp tasks that help you to use [tailwindcss](https://github.com/tailwindcss/tailwindcss) with simple npm commands 
 
 ## Usage
 
