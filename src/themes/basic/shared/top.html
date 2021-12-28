@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Gulp with TailwindCSS</title>
+		<!-- External Font Google or other -->
+		<!-- End External Font -->
+		
+		<!-- External Lib -->
+		<!-- End External Lib -->
+
+		<!-- Main css or Style.css -->
+		<link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+		<!-- End Main css -->
+
+		<!-- Additional Styles -->
+		@@if (context.styles) {
+			@@for(var i=0;i < styles.length;i++) {
+				<link href="`+styles[i]+`" rel="stylesheet">
+			}
+		}
+		<!-- End Additional Styles -->
+
+		<!-- Setup Primary Color -->
+		<style>
+		  :root { --primary-default: #F05545; }
+		</style>
+		<!-- End Setup Primary Color -->
+
+	</head>
+
+	<body>
