@@ -79,12 +79,17 @@ function devStyles(){
     .pipe(dest(options.paths.tmp.css));
 }
 
+// function devScripts(){
+//   return src([
+//     `${options.paths.src.js}/libs/**/*.js`,
+//     `${options.paths.src.js}/**/*.js`,
+//     `!${options.paths.src.js}/**/external/*`
+//   ]).pipe(concat({ path: 'scripts.js'})).pipe(dest(options.paths.tmp.js));
+// }
+
 function devScripts(){
-  return src([
-    `${options.paths.src.js}/libs/**/*.js`,
-    `${options.paths.src.js}/**/*.js`,
-    `!${options.paths.src.js}/**/external/*`
-  ]).pipe(concat({ path: 'scripts.js'})).pipe(dest(options.paths.tmp.js));
+  return src(`${options.paths.src.js}/**/*.js`)
+  .pipe(dest(options.paths.tmp.js));
 }
 
 function devImages(){
@@ -108,7 +113,7 @@ function devClean(){
 function prodHTML(){
   // return src([`${options.paths.src.base}/**/*.html`, ,`${options.paths.tmp.base}/*.html`]).pipe(dest(options.paths.dist.base));
   return src([`${options.paths.tmp.base}/*.html`])
-  .pipe(htmlmin({ collapseWhitespace: false }))
+  .pipe(htmlmin({ collapseWhitespace: true }))
   .pipe(dest(options.paths.dist.base));
 }
 
@@ -126,14 +131,21 @@ function prodStyles(){
   .pipe(dest(options.paths.dist.css));
 }
 
+// function prodScripts(){
+//   return src([
+//     `${options.paths.src.js}/libs/**/*.js`,
+//     `${options.paths.src.js}/**/*.js`
+//   ])
+//   .pipe(concat({ path: 'scripts.js'}))
+//   .pipe(uglify())
+//   .pipe(dest(options.paths.dist.js));
+// }
+
 function prodScripts(){
-  return src([
-    `${options.paths.src.js}/libs/**/*.js`,
-    `${options.paths.src.js}/**/*.js`
-  ])
-  .pipe(concat({ path: 'scripts.js'}))
-  .pipe(uglify())
-  .pipe(dest(options.paths.dist.js));
+  return src(
+    `${options.paths.src.js}/**/*.js`)
+    // .pipe(uglify())
+    .pipe(dest(options.paths.dist.js));
 }
 
 function prodImages(){
